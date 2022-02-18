@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+  <link href="/stylesheets/db.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+
+<%- include ("../partials/nav.ejs") %>
+
+<h2>Add Rectangle</h2>
+
+<form class="add" action="/addrectangle" method="post">
+  <input type="hidden" name="rectid">
+  <input class="align" type="text" name="rectname" value="" placeholder="Name" required> <br>
+  <input class="align" type="number" name="rectwidth" value="" placeholder="Width" required min="1"> <br>
+  <input class="align" type="number" name="rectheight" value="" placeholder="Height" required min="1"> <br>
+  <h4>Please choose a colour</h4>
+  <input type="radio" name="rectcolour" value="Red" checked>
+  <label for="Red">Red</label><br>
+  <input type="radio" name="rectcolour" value="Blue">
+  <label for="Blue">Blue</label><br>
+  <input type="radio" name="rectcolour" value="Green">
+  <label for="Green">Green</label><br>
+  <input type="radio" name="rectcolour" value="Yellow">
+  <label for="Yellow">Yellow</label><br>
+  <input type="radio" name="rectcolour" value="Purple">
+  <label for="Purple">Purple</label><br>
+  <input type="radio" name="rectcolour" value="Orange">
+  <label for="Orange">Orange</label><br>
+  <input type="radio" name="rectcolour" value="Pink">
+  <label for="Pink">Pink</label><br>
+  <input class="addBtn" type="submit" name="sub" value="Submit">
+  
+</form>
+<a href="/database">
+  <button class="backBtn">Go Back</button>
+</a>
+
+</body>
+</html>

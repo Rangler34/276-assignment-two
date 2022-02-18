@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+  <link href="/stylesheets/db.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<%- include ("../partials/nav.ejs") %>
+
+<div class="container">
+<h2>Rectangles</h2>
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Colour</th>
+  </tr>
+  <% rows.forEach(function(r) { %>
+    <tr>
+    <td><%= r.rectid %></td>
+    <td><a href="/rectangleinformation/<%= r.rectid %>"><%= r.rectname %></a></td>
+    <td><%= r.rectcolour %></td>
+  </tr>
+  <% }); %>
+</table>
+<a href="/addrectangle">
+  <button>Add Rectangle</button>
+</a>
+</div>
+
+</body>
+</html>

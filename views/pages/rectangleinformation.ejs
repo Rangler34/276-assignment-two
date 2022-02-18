@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+  <link href="/stylesheets/db.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<%- include ("../partials/nav.ejs") %>
+<% rows.forEach(function(r) { %>
+<div class="rectangle" style="height:<%= r.rectheight %>px; width:<%= r.rectwidth %>px; background-color: <%= r.rectcolour %>" ><%= r.rectname %></div>
+<div class="container">
+<h2>Rectangle Information</h2>
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Height</th>
+    <th>Width</th>
+    <th>Colour</th>
+    <th>Edit</th>
+    <th>Remove</th>
+  </tr>
+  
+    <tr>
+        <td><%= r.rectid %></td>
+        <td><%= r.rectname %></a></td>
+        <td><%= r.rectheight %></td>
+        <td><%= r.rectwidth %></td>
+        <td><%= r.rectcolour %></td>
+        <td><a href="/editrectangle/<%= r.rectid %>">Edit</a></td>
+    
+    <td>
+      <form action="/delete/<%= r.rectid %>" method="post">
+        <input class="removeBtn" type="submit" value="Remove" onclick="return confirm('Are you sure you want to delete?');">
+      </form>
+    </td>
+    </tr>
+  
+</table>
+
+</div>
+
+<a href="/database">
+  <button class="backBtn">Go Back</button>
+</a>
+<% }); %>
+</body>
+</html>
